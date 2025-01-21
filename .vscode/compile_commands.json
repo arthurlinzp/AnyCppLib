@@ -1,6 +1,6 @@
 [
 {
   "directory": "d:\\workstation\\projects\\AnyCppLib",
-  "arguments": ["F:\\Apps\\Visual Studio 2015\\VC\\BIN\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\releasedbg\\compile.AnyCppLib.pdb", "/O2", "/Iinclude", "/EHsc", "/utf-8", "/DNDEBUG", "/Fobuild\\.objs\\AnyCppLib\\windows\\x86\\releasedbg\\src\\main.cpp.obj", "src\\main.cpp", "-imsvc", "C:\\Program Files (x86)\\Windows Kits\\8.1\\Include\\shared", "-imsvc", "C:\\Program Files (x86)\\Windows Kits\\8.1\\Include\\um", "-imsvc", "C:\\Program Files (x86)\\Windows Kits\\8.1\\Include\\winrt"],
+  "arguments": ["F:\\Apps\\Visual Studio 2015\\VC\\BIN\\cl.exe", "/c", "/nologo", "/Zi", "/FS", "/Fdbuild\\windows\\x86\\releasedbg\\compile.AnyCppLib.pdb", "/O2", "/Iinclude", "/ID:\\workstation\\projects\\AnyCppLib\\..\\..\\__devLibs_trdlp\\inc", "/EHsc", "/utf-8", "/DNDEBUG", "/Fobuild\\.objs\\AnyCppLib\\windows\\x86\\releasedbg\\src\\main.cpp.obj", "src\\main.cpp", "-imsvc", "C:\\Program Files (x86)\\Windows Kits\\8.1\\Include\\shared", "-imsvc", "C:\\Program Files (x86)\\Windows Kits\\8.1\\Include\\um", "-imsvc", "C:\\Program Files (x86)\\Windows Kits\\8.1\\Include\\winrt"],
   "file": "src\\main.cpp"
 }]

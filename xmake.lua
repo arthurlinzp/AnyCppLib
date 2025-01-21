@@ -6,10 +6,36 @@ else
     add_cxflags("-finput-charset=UTF-8", "-fexec-charset=UTF-8", {force = true}) -- GCC/Clang
 end
 
+option("devlibs")
+    set_default(true)
+	add_includedirs("$(projectdir)/../../__devLibs_trdlp/inc")
+    if is_plat("windows") then
+        add_linkdirs("$(projectdir)/../../__devLibs_trdlp/libs")
+    elseif is_arch("arm64-v8a") then
+        add_linkdirs("$(projectdir)/../../__devLibs_trdlp/libs_4linux/aarch64/libs_x64")
+        add_linkdirs("$(projectdir)/../../__devLibs_trdlp/libs_4linux/aarch64/lib3rds_x64")
+    else
+        add_linkdirs("$(projectdir)/../../__devLibs_trdlp/libs_4linux/x86_64/libs_x64")
+        add_linkdirs("$(projectdir)/../../__devLibs_trdlp/libs_4linux/x86_64/lib3rds_x64")
+    end
+option_end()
+
 target("AnyCppLib")
     set_kind("binary")
+    add_options("devlibs")
+
     add_includedirs("include")
     add_files("src/*.cpp")
+
+    add_links("DlpULog")
+    
+    -- 自动生成 compile_commands.json 帮助代码补全跳转
+	after_build(function (target)
+		import("core.base.task")
+		task.run("project", {kind = "compile_commands", outputdir = ".vscode"})
+	end)
+target_end()
+
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
